@@ -2,7 +2,9 @@ package com.example.migration.model.mongo;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 @Document(collection = "employees")
 public class UserDocument {
     @Id

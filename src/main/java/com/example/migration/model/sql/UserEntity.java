@@ -1,10 +1,12 @@
 package com.example.migration.model.sql;
 
+import org.springframework.transaction.annotation.Transactional;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
+@Transactional
 @Table(name = "employees")
 public class UserEntity {
     @Id
