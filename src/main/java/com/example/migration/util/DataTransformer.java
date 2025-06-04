@@ -14,8 +14,8 @@ public class DataTransformer {
         UserDocument doc = new UserDocument();
         doc.setId(String.valueOf(entity.getId()));
         doc.setUsername(entity.getUsername());
-        doc.setEmail(entity.getEmail());
-        doc.setPreferences(entity.getPreferences());
+        doc.setPassword(entity.getPassword());
+        doc.setBonus(entity.getBonus());
         return doc;
     }
 }

@@ -1,0 +1,36 @@
+.sql-dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fff5dd;
+}
+.sql-users {
+  font-family: monospace;
+  font-size: 4rem;
+  color: #2c2c2c;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding: 2%;
+}
+.sql-row {
+  font-family: monospace;
+  display: flex;
+  width: 80%;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #2c2c2c;
+}
+.sql-header {
+  background-color: #1d1d1d;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.sql-cell {
+  flex: 1;
+  text-align: left;
+  padding: 0 10px;
+  word-wrap: break-word;
+}
