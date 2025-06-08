@@ -31,9 +31,16 @@ public class UserController {
     private UserMongoRepository mongoRepo;
 
     @GetMapping("/api")
-    public ResponseEntity<String> getProfile(@RequestHeader("X-USER") String username) {
-        logger.info("Intercepted one request.");
-        return ResponseEntity.status(200).body("Migrated one user from SQL to MongoDB successfully!");
+    public ResponseEntity<String> getProfile(@RequestHeader(value = "X-USER", required = true) String username) {
+        try {
+            if (username == null || username.isEmpty()) {
+                return ResponseEntity.status(500).body("Internal server error");
+            }
+            return ResponseEntity.status(200).body("Migrated one user from SQL to MongoDB successfully!");
+        } catch (Exception e) {
+            logger.error("Unexpected error in /api", e);
+            return ResponseEntity.status(500).body("Internal server error.");
+        }
     }
 
     @GetMapping("/all-sql")
@@ -51,10 +58,10 @@ public class UserController {
         String username = credentials.get("username");
         String password = credentials.get("password");
         if (username == null || password == null) {
-            return ResponseEntity.badRequest().body("Username and password must be provided");
+            return ResponseEntity.badRequest().body("Username and password must be provided.");
         }
         return sqlRepo.findByUsername(username)
                 .<ResponseEntity<?>>map(user -> ResponseEntity.ok(user))
-                .orElse(ResponseEntity.status(401).body("Invalid credentials"));
+                .orElse(ResponseEntity.status(401).body("Invalid credentials."));
     }
 }

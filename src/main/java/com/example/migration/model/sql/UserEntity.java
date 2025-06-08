@@ -10,17 +10,17 @@ import jakarta.persistence.Table;
 @Table(name = "employees")
 public class UserEntity {
     @Id
-    private Long id;
+    private int id;
     private String username;
     private String password;
-    private String bonus;
+    private boolean bonus;
 
     // Getters/Setters
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -40,11 +40,11 @@ public class UserEntity {
         this.password = password;
     }
 
-    public String getBonus() {
+    public boolean getBonus() {
         return bonus;
     }
 
-    public void setBonus(String bonus) {
+    public void setBonus(boolean bonus) {
         this.bonus = bonus;
     }
 }

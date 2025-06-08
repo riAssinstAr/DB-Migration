@@ -6,6 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.migration.model.mongo.UserDocument;
 
 @Transactional
-public interface UserMongoRepository extends MongoRepository<UserDocument, String> {
+public interface UserMongoRepository extends MongoRepository<UserDocument, Integer> {
     Optional<UserDocument> findByUsername(String username);
 }

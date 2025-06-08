@@ -12,7 +12,7 @@ public class DataTransformer {
     @Transactional
     public UserDocument transform(UserEntity entity) {
         UserDocument doc = new UserDocument();
-        doc.setId(String.valueOf(entity.getId()));
+        doc.setId(entity.getId());
         doc.setUsername(entity.getUsername());
         doc.setPassword(entity.getPassword());
         doc.setBonus(entity.getBonus());

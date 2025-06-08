@@ -1,24 +1,24 @@
 package com.example.migration.model.mongo;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
 @Document(collection = "employees")
 public class UserDocument {
-    @Id
-    private String id;
+    @Field("id")
+    private int id;
     private String username;
     private String password;
-    private String bonus;
+    private boolean bonus;
 
     // Getters/Setters
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -38,11 +38,11 @@ public class UserDocument {
         this.password = password;
     }
 
-    public String getBonus() {
+    public boolean getBonus() {
         return bonus;
     }
 
-    public void setBonus(String bonus) {
+    public void setBonus(boolean bonus) {
         this.bonus = bonus;
     }
 }

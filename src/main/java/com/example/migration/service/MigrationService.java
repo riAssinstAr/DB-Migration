@@ -31,7 +31,7 @@ public class MigrationService {
         }
 
         sqlRepo.findByUsername(username).ifPresentOrElse(sqlUser -> {
-            logger.info("Migrating user from SQL to MongoDB.");
+            logger.info("Migrating one user from SQL to MongoDB.");
             UserDocument doc = transformer.transform(sqlUser);
             mongoRepo.save(doc);
             logger.info("Migration completed for user: " + username);

@@ -6,6 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.migration.model.sql.UserEntity;
 
 @Transactional
-public interface UserRepository extends JpaRepository<UserEntity, Long> {
+public interface UserRepository extends JpaRepository<UserEntity, Integer> {
     Optional<UserEntity> findByUsername(String username);
 }
