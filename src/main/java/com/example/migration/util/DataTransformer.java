@@ -2,7 +2,6 @@ package com.example.migration.util;
 
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.example.migration.model.mongo.UserDocument;
 import com.example.migration.model.sql.UserEntity;
 

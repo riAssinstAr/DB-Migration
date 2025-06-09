@@ -10,12 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import com.example.migration.repository.mongo.UserMongoRepository;
 import com.example.migration.repository.sql.UserRepository;
 import com.example.migration.model.mongo.UserDocument;
 import com.example.migration.model.sql.UserEntity;
-
 import java.util.List;
 import java.util.Map;
 
