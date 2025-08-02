@@ -1,8 +1,6 @@
-version: "3.8"
-
 services:
   migration-app:
-    image: migration-app
+    image: migration
     build: .
     ports:
       - "8081:8081"
