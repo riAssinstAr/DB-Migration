@@ -53,5 +53,5 @@ Build the project
 Start the server
 
 ```bash
-  mvn sprin-boot:run
+  mvn spring-boot:run
 ```
