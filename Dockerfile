@@ -1,8 +1,9 @@
-FROM maven:3.9.8-eclipse-temurin-21 AS build
-COPY . .
-RUN mvn clean install -DskipTests
+FROM eclipse-temurin:21-jre
 
-FROM openjdk:21
-COPY --from=build /target/*.jar /app.jar
-EXPOSE 8080
-CMD ["java", "-jar", "/app.jar"]
+WORKDIR /app
+
+COPY target/migration-0.0.1-SNAPSHOT.jar migration.jar
+
+EXPOSE 8081
+
+ENTRYPOINT ["java", "-jar", "migration.jar"]

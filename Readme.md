@@ -10,9 +10,9 @@ A user focused Postgres SQL to MongoDB database migration tool built with Java a
 
     Docker & Docker Compose
 
-    Supabase PostgreSQL URL, user, password
+    Supabase PostgreSQL URL
 
-    MongoDB Atlas URI, user, password
+    MongoDB Atlas URI
 
     .env file to store environment variables
 
@@ -34,24 +34,20 @@ Place your environment secrets in a .env file in the project root:
 
 ```dotenv
     # Supabase PostgreSQL
-    SUPABASE_HOST=xyz.supabase.co
-    SUPABASE_PORT=your_supabase_port
-    SUPABASE_DB_USER=your_supabase_user
-    SUPABASE_DB_PASS=your_supabase_password
+    SUPABASE_DB_URL=your_supabase_url
 
     # MongoDB Atlas
-    MONGODB_USER=your_mongo_user
-    MONGODB_PASS=your_mongo_password
+    MONGODB_URI=your_mongodb_atlas_uri
 ```
 
 Build the project
 
 ```bash
-  mvn clean install
+  docker compose build
 ```
 
 Start the server
 
 ```bash
-  mvn spring-boot:run
+  docker compose up
 ```
